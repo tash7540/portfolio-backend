@@ -15,7 +15,16 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 dotenv.config();
+//get route used to test api
+app.get('/', async (req, res) => {
+  try {
+      res.status(200).json("Welcome to the server!");
+  } catch (error) {
+      res.status(404).json({ message: error.message });
+  }
+});
 app.use('/posts', postRoutes);
+
 
 
 const PORT = process.env.PORT|| 5000;
