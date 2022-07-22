@@ -5,7 +5,7 @@ import nodemailer from 'nodemailer';
 const router = express.Router();
 
 export const createPost = async (req, res) => {
-    const {name,email,subject,message} = req.body;
+    const {name,email,subject,message,email1} = req.body;
     const contactEmail = nodemailer.createTransport({
       service: 'gmail',
       auth: {
