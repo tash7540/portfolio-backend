@@ -9,7 +9,11 @@ import postRoutes from './routes/posts.js';
 const app = express();
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
-app.use(cors());
+const corsOptions = {
+    origin: 'https://62db16bae705d10eeea56743--aquamarine-kleicha-5c0aae.netlify.app',
+    credentials: true,
+};
+app.use(cors(corsOptions));
 dotenv.config();
 app.use('/posts', postRoutes);
 
