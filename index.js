@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 const corsOptions = {
-    origin: ['https://aquamarine-kleicha-5c0aae.netlify.app','https://tamershahwan.com'],
+    origin: 'https://tamershahwan.com',
     credentials: true,
 };
 app.use(cors(corsOptions));
